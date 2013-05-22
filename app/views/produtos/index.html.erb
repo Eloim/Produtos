@@ -1,0 +1,41 @@
+<h1>Index Produtos</h1>
+
+<p>
+    <%= link_to "Novo Usuário", new_user_path %> |
+    <%= link_to "Nova Categoria", new_category_path %> |
+    <%= link_to "Novo Produto", new_produto_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Status</th>
+    <th>Usuário</th>
+    <th>Categoria</th>
+    <th>Criado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @produtos.each do |produto| %>
+  <tr>
+    <td><%= produto.name %></td>
+    <td><%= produto.description %></td>
+    <td><%= produto.status %></td>
+    <td><%= produto.user.name %></td>
+    <td><%= produto.category.name %></td>
+    <td><%= produto.created_at.strftime("%d/%m/%Y") %></td>
+    <td><%= link_to 'Ver', produto %></td>
+    <td><%= link_to 'Editar', edit_produto_path(produto) %></td>
+    <td><%= link_to 'Excluir', produto, method: :delete, data: { confirm: 'Tem certeza que deseja excluir?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<p>
+    <%= link_to "Novo Usuário", new_user_path %> |
+    <%= link_to "Nova Categoria", new_category_path %> |
+    <%= link_to "Novo Produto", new_produto_path %>
+</p>

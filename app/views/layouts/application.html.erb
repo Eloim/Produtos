@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Produtos</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header">
+			<div id="logo">
+				<h2><%= link_to 'Central de Produtos', produtos_path %></h2>
+				<p>Minha lista de produtos feito com Rails</p>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="current_page_item"><%= link_to 'Index', produtos_path %></li>
+					<li><%= link_to 'Produtos', produtos_path %></li>
+					<li><%= link_to 'Categorias', categories_path %></li>
+					<li><%= link_to 'Usuários', users_path %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+			<%= yield %>
+				<div style="clear: both;"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+</div>
+</body>
+</html>
